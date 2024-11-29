@@ -20,6 +20,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setSearchResultTrips } from "@/lib/redux/TripSlice";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { apiUrl } from "@/lib/constants";
 
 export type Filter = {
   bottom: number | string;
@@ -55,8 +56,7 @@ const ManageTrips = () => {
 
   const handleSubmit = async () => {
     try {
-      let url = import.meta.env.VITE_API_URL;
-      console.log({ url });
+      let url = apiUrl;
 
       // ADD INDEX
       url += `?index=${page * limit - limit},${page * limit - 1}`;

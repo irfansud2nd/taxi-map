@@ -12,6 +12,7 @@ import { LatLngBoundsExpression } from "leaflet";
 import {
   TaxiTripWithRoute,
   TripToDisplay,
+  apiUrl,
   defaultColor,
 } from "../lib/constants";
 import { countDuration, formatDate, roundDecimal } from "../lib/functions";
@@ -131,7 +132,7 @@ const TaxiTripMap = () => {
 
   const fetchData = async () => {
     try {
-      const result = await axios.get(import.meta.env.VITE_API_URL);
+      const result = await axios.get(apiUrl);
       let data = result.data.data.map((item: TaxiTripWithRoute, i: number) => ({
         ...item,
         color: defaultColor,

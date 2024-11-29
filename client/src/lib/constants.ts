@@ -34,3 +34,5 @@ export type TripToDisplay = TaxiTripWithRoute & {
 };
 
 export const defaultColor = "#3b82f6";
+
+export const apiUrl = "https://taxi-map-api.vercel.app";
